@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbb57763-39ac-4b21-8a2f-cf2ad4511b2e" name="Changes" comment="Completed the Snake game">
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="bbb57763-39ac-4b21-8a2f-cf2ad4511b2e" name="Changes" comment="Fixed switch statements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,11 +61,19 @@
       <option name="project" value="LOCAL" />
       <updated>1697243310280</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed switch statements">
+      <created>1697243548153</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697243548153</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Completed the Snake game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed the Snake game" />
+    <MESSAGE value="Fixed switch statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed switch statements" />
   </component>
 </project>
