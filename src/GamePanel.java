@@ -12,8 +12,8 @@ public class GamePanel extends JPanel implements ActionListener {
     static final int UNIT_SIZE = 25;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     static final int DELAY = 75;
-    final int[] x = new int[GAME_UNITS];
-    final int[] y = new int[GAME_UNITS];
+    final int x[] = new int[GAME_UNITS];
+    final int y[] = new int[GAME_UNITS];
     int bodyParts = 6;
     int applesEaten;
     int appleX;
@@ -117,8 +117,8 @@ public class GamePanel extends JPanel implements ActionListener {
         boolean validApplePosition = false;
 
         while (!validApplePosition) {
-            appleX = random.nextInt( (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
-            appleY = random.nextInt( (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
+            appleX = random.nextInt((int) (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
+            appleY = random.nextInt((int) (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
 
             validApplePosition = true;
 
@@ -139,11 +139,19 @@ public class GamePanel extends JPanel implements ActionListener {
             y[i] = y[i-1];
         }
 
-        switch (direction) {
-            case 'U' -> y[0] = y[0] - UNIT_SIZE;
-            case 'D' -> y[0] = y[0] + UNIT_SIZE;
-            case 'L' -> x[0] = x[0] - UNIT_SIZE;
-            case 'R' -> x[0] = x[0] + UNIT_SIZE;
+        switch(direction) {
+            case 'U':
+                y[0] = y[0] - UNIT_SIZE;
+                break;
+            case 'D':
+                y[0] = y[0] + UNIT_SIZE;
+                break;
+            case 'L':
+                x[0] = x[0] - UNIT_SIZE;
+                break;
+            case 'R':
+                x[0] = x[0] + UNIT_SIZE;
+                break;
         }
 
     }
@@ -167,9 +175,8 @@ public class GamePanel extends JPanel implements ActionListener {
     public void checkCollisions() {
         //Checks if head collides with body
         for(int i = bodyParts;i>0;i--) {
-            if ((x[0] == x[i]) && (y[0] == y[i])) {
+            if((x[0] == x[i]) && (y[0] == y[i])) {
                 running = false;
-                break;
             }
         }
         //Check if head touches left border
@@ -177,11 +184,11 @@ public class GamePanel extends JPanel implements ActionListener {
             running = false;
         }
         //Check if head touches right border
-        if(x[0] > SCREEN_WIDTH) {
+        if(x[0] > 600) {
             running = false;
         }
         //Check if head touches top border
-        if(y[0] < SCREEN_HEIGHT) {
+        if(y[0] < 0) {
             running = false;
         }
         //Check if head touches bottom border
@@ -264,26 +271,26 @@ public class GamePanel extends JPanel implements ActionListener {
         public void keyPressed(KeyEvent e) {
 
             switch (e.getKeyCode()) {
-                case KeyEvent.VK_LEFT -> {
-                    if (direction != 'R') {
+                case KeyEvent.VK_LEFT:
+                    if(direction != 'R') {
                         direction = 'L';
                     }
-                }
-                case KeyEvent.VK_RIGHT -> {
-                    if (direction != 'L') {
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    if(direction != 'L') {
                         direction = 'R';
                     }
-                }
-                case KeyEvent.VK_UP -> {
-                    if (direction != 'D') {
+                    break;
+                case KeyEvent.VK_UP:
+                    if(direction != 'D') {
                         direction = 'U';
                     }
-                }
-                case KeyEvent.VK_DOWN -> {
-                    if (direction != 'U') {
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if(direction != 'U') {
                         direction = 'D';
                     }
-                }
+                    break;
             }
 
         }
